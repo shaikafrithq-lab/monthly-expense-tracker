@@ -1,0 +1,840 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Inter, Arial, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(34, 197, 94, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(16, 185, 129, 0.10),
+      transparent 30%
+    ),
+    #f0fdf4;
+
+  color: #172033;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+  width: 92%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+  padding: 30px 0 60px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(74, 222, 128, 0.20),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #064e3b,
+      #065f46,
+      #047857
+    );
+
+  color: white;
+
+  min-height: 150px;
+  padding: 30px 34px;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  box-shadow:
+    0 14px 35px rgba(6, 78, 59, 0.20);
+
+  margin-bottom: 22px;
+}
+
+header h1 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin: 8px 0 0;
+
+  color: #d1fae5;
+
+  font-size: 15px;
+}
+
+header > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* =========================
+   HEADER BUTTONS
+========================= */
+
+header button {
+  border: none;
+
+  padding: 11px 16px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+header button:first-child {
+  background: #22c55e;
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(34, 197, 94, 0.25);
+}
+
+header button:first-child:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+header button:last-child {
+  background: rgba(255, 255, 255, 0.10);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+header button:last-child:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================
+   MONTH NAVIGATION
+========================= */
+
+.month {
+  background: white;
+
+  border: 1px solid #dcfce7;
+
+  border-radius: 16px;
+
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 5px 18px rgba(6, 78, 59, 0.06);
+}
+
+.month h2 {
+  margin: 0;
+
+  color: #065f46;
+
+  font-size: 22px;
+}
+
+.month button {
+  width: 42px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #ecfdf5;
+
+  color: #047857;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.month button:hover {
+  background: #d1fae5;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
+.card {
+  position: relative;
+
+  background: white;
+
+  border: 1px solid #dcfce7;
+
+  border-radius: 17px;
+
+  padding: 21px;
+
+  min-height: 145px;
+
+  box-shadow:
+    0 6px 20px rgba(6, 78, 59, 0.06);
+
+  overflow: hidden;
+
+  transition: 0.2s ease;
+}
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #16a34a,
+      #10b981
+    );
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(6, 78, 59, 0.10);
+}
+
+.card p {
+  margin: 0 0 10px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.card h2 {
+  margin: 0;
+
+  color: #065f46;
+
+  font-size: 24px;
+}
+
+
+/* =========================
+   INCOME CARD
+========================= */
+
+.card input[type="number"] {
+  width: 100%;
+
+  padding: 10px 11px;
+
+  margin-bottom: 9px;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.card input[type="number"]:focus {
+  border-color: #16a34a;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+.card button {
+  border: none;
+
+  background: #047857;
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #065f46;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  background: white;
+
+  border: 1px solid #dcfce7;
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  margin-bottom: 24px;
+
+  box-shadow:
+    0 6px 20px rgba(6, 78, 59, 0.06);
+}
+
+section > h2 {
+  margin: 0 0 20px;
+
+  color: #065f46;
+
+  font-size: 21px;
+}
+
+
+/* =========================
+   CATEGORY BREAKDOWN
+========================= */
+
+.app > section:first-of-type {
+  display: grid;
+
+  grid-template-columns: 1fr 420px;
+
+  column-gap: 30px;
+
+  align-items: start;
+}
+
+.app > section:first-of-type > h2 {
+  grid-column: 1 / -1;
+}
+
+.app > section:first-of-type .expense {
+  grid-column: 1;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   EXPENSE ITEMS
+========================= */
+
+.expense {
+  background: #f8fffa;
+
+  border: 1px solid #dcfce7;
+
+  border-radius: 12px;
+
+  padding: 15px 17px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  transition: 0.2s ease;
+}
+
+.expense:hover {
+  background: #f0fdf4;
+
+  border-color: #bbf7d0;
+
+  transform: translateX(2px);
+}
+
+.expense h3 {
+  margin: 0 0 5px;
+
+  color: #065f46;
+
+  font-size: 16px;
+}
+
+.expense p {
+  margin: 3px 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.expense strong {
+  color: #047857;
+
+  font-size: 17px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   EXPENSE BUTTONS
+========================= */
+
+.expense button {
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  background: #ecfdf5;
+
+  color: #047857;
+}
+
+.expense button:hover {
+  background: #d1fae5;
+}
+
+
+/* =========================
+   RECENT EXPENSE SEARCH
+========================= */
+
+.app > section:nth-of-type(2) > input[type="text"] {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  margin-bottom: 18px;
+}
+
+.app > section:nth-of-type(2) > input[type="text"]:focus {
+  border-color: #16a34a;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
+.empty-message {
+  text-align: center;
+
+  padding: 35px 10px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   PIE CHART
+========================= */
+
+.app > section:first-of-type > .recharts-wrapper {
+  grid-column: 2;
+
+  grid-row: 2 / span 10;
+
+  justify-self: center;
+}
+
+
+/* =========================
+   FORM BOX
+========================= */
+
+.form-box {
+  background: white;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  margin-top: 20px;
+
+  box-shadow:
+    0 12px 30px rgba(6, 78, 59, 0.10);
+}
+
+.form-box h2 {
+  margin-top: 0;
+
+  color: #065f46;
+}
+
+.form-box input,
+.form-box select {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  margin-bottom: 12px;
+
+  border: 1px solid #d1fae5;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  background: white;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+  border-color: #16a34a;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+.form-buttons button {
+  border: none;
+
+  padding: 11px 17px;
+
+  border-radius: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.form-buttons button:first-child {
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #059669
+    );
+
+  color: white;
+}
+
+.form-buttons button:first-child:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #15803d,
+      #047857
+    );
+
+  transform: translateY(-1px);
+}
+
+.form-buttons button:last-child {
+  background: #f1f5f9;
+
+  color: #475569;
+}
+
+.form-buttons button:last-child:hover {
+  background: #e2e8f0;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(34, 197, 94, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(16, 185, 129, 0.13),
+      transparent 30%
+    ),
+    #f0fdf4;
+}
+
+.login-box {
+  width: 370px;
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  border: 1px solid #dcfce7;
+
+  box-shadow:
+    0 20px 50px rgba(6, 78, 59, 0.12);
+
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-top: 0;
+
+  color: #065f46;
+}
+
+.login-box h2 {
+  color: #475569;
+
+  font-size: 20px;
+}
+
+.login-box input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-bottom: 12px;
+
+  border: 1px solid #d1fae5;
+
+  border-radius: 9px;
+
+  outline: none;
+}
+
+.login-box input:focus {
+  border-color: #16a34a;
+}
+
+.login-box button {
+  width: 100%;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #059669
+    );
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app > section:first-of-type {
+    grid-template-columns: 1fr;
+  }
+
+  .app > section:first-of-type > .recharts-wrapper {
+    grid-column: 1;
+    grid-row: auto;
+
+    justify-self: center;
+
+    margin-top: 20px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .app {
+    width: 94%;
+
+    padding-top: 18px;
+  }
+
+  header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 24px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  header > div:last-child {
+    width: 100%;
+  }
+
+  header button {
+    flex: 1;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .month {
+    padding: 13px;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  .expense {
+    flex-wrap: wrap;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons button {
+    width: 100%;
+  }
+
+  .login-box {
+    width: 82%;
+  }
+
+}
+
+
+/* =========================
+   LOGIN TITLE FIX
+========================= */
+
+.login-box h1 {
+  margin: 0 0 18px;
+
+  color: #065f46;
+
+  font-size: 34px;
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
+
+  text-align: center;
+}
