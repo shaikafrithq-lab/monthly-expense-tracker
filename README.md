@@ -64,3 +64,17 @@ monthly_expense_tracker/
 │
 ├── .gitignore
 └── README.md
+
+## Screenshots
+
+### Login
+
+![Login](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Add Expense
+
+![Add Expense](screenshots/add-expense.png)
